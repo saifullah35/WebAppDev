@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <title>Mad Libs</title>
+    <body>
+        <script>
+            function sentence(event) {
+
+                if (this.value == "Sentence 1") {
+                    sentenceString.innerHTML = nameInput.value + " watches Judge Judy while " + advInput.value + " " + verbInput.value + " the " + adjInput.value + " cheese " + conjInput.value + " fleeing from the " + nounInput.value + ".";
+                    var request = new XMLHttpRequest();
+                    request.open("POST", "add_sentence_data.php");
+                    request.setRequestHeader("Content-Type", "application/");
+                    request.send(sentenceString);	
+                }
+                else if (this.value == "Sentence 2") {
+                    sentenceString.innerHTML = nameInput.value + " eats the " + adjInput.value + " " + nounInput.value + " " + conjInput.value + " " + advInput.value + " " + verbInput.value + " Judge Judy.";
+                    var request = new XMLHttpRequest();
+                    request.open("POST", "add_sentence_data.php");
+                    request.setRequestHeader("Content-Type", "application/");
+                    request.send(sentenceString);	
+                }
+                else if (this.value == "Sentence 3") {
+                    sentenceString.innerHTML = "The " + nounInput.value + " " + verbInput.value + " from the " + adjInput.value + " tree " + conjInput.value + " " + nameInput.value + " " + advInput.value + " laughs out loud.";
+                    var request = new XMLHttpRequest();
+                    request.open("POST", "add_sentence_data.php");
+                    request.setRequestHeader("Content-Type", "application/");
+                    request.send(sentenceString); 	
+                }
+            }
+
+            let header = document.createElement("h1");
+            header.innerHTML = "Mad Libs";
+
+            let nameLabel = document.createElement("label");
+            nameLabel.innerHTML = "Name of person: ";
+            let nameInput = document.createElement("input");
+            nameInput.setAttribute("type", "text");
+
+            let verbLabel = document.createElement("label");
+            verbLabel.innerHTML = "Verb ending in &ldquo;ing&rdquo;: ";
+            let verbInput = document.createElement("input");
+            verbInput.setAttribute("type", "text");
+
+            let adjLabel = document.createElement("label");
+            adjLabel.innerHTML = "Adjective: ";
+            let adjInput = document.createElement("input");
+            adjInput.setAttribute("type", "text");
+
+            let nounLabel = document.createElement("label");
+            nounLabel.innerHTML = "Noun: ";
+            let nounInput = document.createElement("input");
+            nounInput.setAttribute("type", "text");
+
+            let advLabel = document.createElement("label");
+            advLabel.innerHTML = "Adverb ending in &ldquo;ly&rdquo;: ";
+            let advInput = document.createElement("input");
+            advInput.setAttribute("type", "text");
+
+            let conjLabel = document.createElement("label");
+            conjLabel.innerHTML = "Conjunction: ";
+            let conjInput = document.createElement("input");
+            conjInput.setAttribute("type", "text");
+
+            let firstSentence = document.createElement("input");
+            firstSentence.setAttribute("type", "button");
+            firstSentence.setAttribute("value", "Sentence 1");
+
+            let secondSentence = document.createElement("input");
+            secondSentence.setAttribute("type", "button");
+            secondSentence.setAttribute("value", "Sentence 2");
+
+            let thirdSentence = document.createElement("input");
+            thirdSentence.setAttribute("type", "button");
+            thirdSentence.setAttribute("value", "Sentence 3");
+
+            let myForm = document.createElement("form");
+            myForm.appendChild(header);
+            myForm.appendChild(nameLabel);
+            myForm.appendChild(nameInput);
+
+            let break1 = document.createElement("br");
+            myForm.appendChild(break1);
+            let break7 = document.createElement("br");
+            myForm.appendChild(break7);
+
+            myForm.appendChild(verbLabel);
+            myForm.appendChild(verbInput);
+
+            let break2 = document.createElement("br");
+            myForm.appendChild(break2);
+            let break8 = document.createElement("br");
+            myForm.appendChild(break8);
+
+            myForm.appendChild(adjLabel);
+            myForm.appendChild(adjInput);
+
+            let break3 = document.createElement("br");
+            myForm.appendChild(break3);
+            let break9 = document.createElement("br");
+            myForm.appendChild(break9);
+
+            myForm.appendChild(nounLabel);
+            myForm.appendChild(nounInput);
+
+            let break4 = document.createElement("br");
+            myForm.appendChild(break4);
+            let break10 = document.createElement("br");
+            myForm.appendChild(break10);
+
+            myForm.appendChild(advLabel);
+            myForm.appendChild(advInput);
+
+            let break5 = document.createElement("br");
+            myForm.appendChild(break5);
+            let break11 = document.createElement("br");
+            myForm.appendChild(break11);
+
+            myForm.appendChild(conjLabel);
+            myForm.appendChild(conjInput);
+
+            let break6 = document.createElement("br");
+            myForm.appendChild(break6);
+            let break12 = document.createElement("br");
+            myForm.appendChild(break12);
+
+            myForm.appendChild(firstSentence);
+            myForm.appendChild(secondSentence);
+            myForm.appendChild(thirdSentence);
+
+            let sentenceString = document.createElement("p");
+            myForm.appendChild(sentenceString);
+
+            firstSentence.addEventListener("click", sentence);
+            secondSentence.addEventListener("click", sentence);
+            thirdSentence.addEventListener("click", sentence);
+            
+
+            document.querySelector("body").appendChild(myForm);
+        </script>
+    </body>
+</html>

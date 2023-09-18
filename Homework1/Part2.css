@@ -1,0 +1,108 @@
+body {
+	background-color: rgb(255, 215, 0);
+}
+
+
+#center{
+    text-align: center;
+    margin-left: 200px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 75px;
+    width: 70%;
+    padding: 10px;
+}
+
+header h1 {
+	display: inline-block;
+	margin-left: 30px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+    color: white;
+
+}
+
+h2 {
+	display: inline-block;
+	margin-left: 600px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+    color: white;
+    border-style: ridge;
+    border-color: black;
+
+}
+
+header h6 {
+	display: inline-block;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+    color: black;
+    font-style: italic;
+    font-size: 50px;
+    border-style: solid;
+    border-color: white;
+
+}
+
+header nav{
+	display: inline-block;
+}
+
+header nav li {
+	list-style: none;
+	display: inline-block;
+	border: 1px solid black;
+	padding: 1px 1px;
+	background-color: rgb(234, 14, 234);
+	
+}
+
+header nav ul {
+	padding: 0px;
+	margin-top: 0px;
+    margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3, .topic {
+    text-decoration: underline;
+    margin-top: 0px;
+    margin-bottom: 0px;
+	margin-left: -27px;
+	margin-right: 0px;
+    
+
+}
+
+h4, .topic2{
+    font-style: italic;
+}
+
+h5, .topic3{
+    font-weight: bold;
+}
+
+header h7 {
+	display: inline-block;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-top: -80px;
+    color: black;
+    font-size: 25px;
+}
+
+

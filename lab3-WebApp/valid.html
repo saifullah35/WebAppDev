@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+	<head>
+		<title>Append</title>
+		<style>
+			div {
+				border: 1px solid gray;
+				border-radius: 5px;
+				color = "white";
+				padding: 5px;
+				margin: 5px;
+			}
+			label {
+				display: block;
+			}
+			input {
+				height: 1.6rem;
+				font-size: 1.1rem;
+			}
+			input[type~="submit"] {
+				background-color: lightgreen;
+				border: 1px solid black;
+				border-radius: 5px;
+				height: 2.5rem;
+				padding: 5px 20px;
+				margin: 5px;
+				text-align: center;
+				box-shadow: 2px 2px gray;
+			}
+		</style>
+	</head>
+	<body>
+		<form id="pony_form" action="http://breimer.sienacs.com/courses/csis-390-s17/labs/lab2/insert_pony.php" method="get" target="_blank">	
+		</form>
+		<script>
+			function checkForm(event) {
+				let name = document.querySelector("#pony_name");
+				let birthday = document.querySelector("#birthday");
+				let year = birthday.value.split("-")[0];
+				if(name.value == "") {
+					name.style.border = "5px solid red";
+					name.parentNode.stlye.color = "red";
+					name.parentNode.firstChild.innerHTML = "Name is required";
+					event.preventDefault();
+				} else {
+					name.style.border = "1px solid gray"
+				}
+				if(year < 2000) {
+					birthday.style.border = "5px solid red";
+					birthday.parentNode.stlye.color = "red";
+					birthday.parentNode.firstChild.innerHTML = "Birthday year must not preceed the year 2000";
+					event.preventDefault();
+				} else {
+					birthday.style.border = "1px solid gray"
+				}
+			}
+			
+			// ID variables:
+			var newID = "pony_name";
+			var birthdayID = "birthday";
+			// Labels:
+			var newLabel = document.createElement('label');
+			newLabel.setAttribute("for", newID);
+			newLabel.innerHTML = "<b>Name:</b> ";
+			var birthdayLabel = document.createElement('label');
+			birthdayLabel.setAttribute("for", birthdayID);
+			birthdayLabel.innerHTML = "<b>Birthday:</b> ";
+			// Inuputs:
+			var newInput = document.createElement('input');
+			newInput.setAttribute("type", "text");
+			newInput.setAttribute("id", newID);
+			newInput.setAttribute("name", newID);
+			var birthdayInput = document.createElement('input');
+			birthdayInput.setAttribute("type", "date");
+			birthdayInput.setAttribute("id", birthdayID);
+			birthdayInput.setAttribute("name", birthdayID);
+			// Div Containers:
+			var newDiv = document.createElement('div');
+			newDiv.appendChild(newLabel);
+			newDiv.appendChild(newInput);
+			var birthdayDiv = document.createElement('div');
+			birthdayDiv.appendChild(birthdayLabel);
+			birthdayDiv.appendChild(birthdayInput);
+			// Form & Form Appending:
+			var ponyForm = document.querySelector("#pony_form");
+			ponyForm.appendChild(newDiv);
+			ponyForm.appendChild(birthdayDiv);
+			// Submit Button:
+			var submitButton   = document.createElement("input");
+			submitButton.type  = "submit";
+			submitButton.value = "Input";
+			submitButton.name  = "action_button";
+			submitButton.id    = "action_button";
+			ponyForm.appendChild(submitButton);
+			// Submit Event:
+			ponyForm.addEventListener("submit", checkForm);
+			// Hover Effect:
+			submitButton.addEventListener("mouseover", function() {
+				this.style.color = "white";
+				this.style.backgroundColor = "darkgreen";
+			});
+			submitButton.addEventListener("mouseout", function() {
+				this.style.color = "black";
+				this.style.backgroundColor = "lightgreen";
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,14 @@
+<?php
+session_start();
+
+$data = file_get_contents('php://input');
+
+$filename = "sentencedata.txt";
+$myfile = fopen($filename, "a");
+if (!$myfile) {
+   die("Unable to open $filename.");
+}
+fwrite($myfile, $data);
+fclose($myfile);		
+        
+?>

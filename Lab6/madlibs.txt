@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8">
+	<title>Mad Libs</title>
+	<style>
+		label {display: block; margin: 10px}
+	</style>
+	<body>
+		<h1>Mad Libs</h1>
+		<form method="get" action="madlibs.php">
+			<label>Name of person: 
+				<input type="text" name="name">
+			</label>
+			<label>Verb ending in "ing":
+				<input type="text" name="verb">
+			</label>			
+			<input type="submit" value="Sentence 1" name="sentence">
+			<input type="submit" value="Sentence 2" name="sentence">
+		</form>
+		<p>
+		<?php 
+		$sentence = $_GET['sentence'];
+		$name = $_GET['name'];
+		$verb = $_GET['verb'];
+
+		if ($sentence == "Sentence 1") {
+			echo "$name watches Judge Judy while $verb the finest cheese";
+		}
+		else if ($sentence == "Sentence 2") {
+			echo "$name eats the finest cheese while $verb Judge Judy.";
+		}
+		?>
+		</p>
+	</body>
+</html>

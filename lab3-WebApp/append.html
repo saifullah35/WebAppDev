@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang = "en">
+<meta charset="UTF-8">
+	<head>
+		<title>Append</title>
+		<style>
+			div {
+				border: 1px solid gray;
+				border-radius: 5px;
+				padding: 5px;
+				margin: 5px;
+			}
+			label {
+				display: block;
+			}
+			input {
+				height: 1.6rem;
+				font-size: 1.1rem;
+			}
+		</style>
+	</head>
+	<body>
+		<form id="pony_form" action="http://breimer.sienacs.com/courses/csis-390-s17/labs/lab2/insert_pony.php" method="get">	
+		</form>
+		<script>
+			// ID variables:
+			var newID = "pony_name";
+			var birthdayID = "birthday";
+			// Labels:
+			var newLabel = document.createElement('label');
+			newLabel.setAttribute("for", newID);
+			newLabel.innerHTML = "<b>Name:</b> ";
+			var birthdayLabel = document.createElement('label');
+			birthdayLabel.setAttribute("for", birthdayID);
+			birthdayLabel.innerHTML = "<b>Birthday:</b> ";
+			// Inuputs:
+			var newInput = document.createElement('input');
+			newInput.setAttribute("type", "text");
+			newInput.setAttribute("id", newID);
+			newInput.setAttribute("name", newID);
+			var birthdayInput = document.createElement('input');
+			birthdayInput.setAttribute("type", "date");
+			birthdayInput.setAttribute("id", birthdayID);
+			birthdayInput.setAttribute("name", birthdayID);
+			// Div Containers:
+			var newDiv = document.createElement('div');
+			newDiv.appendChild(newLabel);
+			newDiv.appendChild(newInput);
+			var birthdayDiv = document.createElement('div');
+			birthdayDiv.appendChild(birthdayLabel);
+			birthdayDiv.appendChild(birthdayInput);
+			// Form & Form Appending:
+			var ponyForm = document.querySelector("#pony_form");
+			ponyForm.appendChild(newDiv);
+			ponyForm.appendChild(birthdayDiv);
+		</script>
+	</body>
+</html>

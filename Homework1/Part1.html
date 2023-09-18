@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="UTF-8">
+		<style>
+
+			a {
+				color: black;
+				text-decoration: none;
+			}
+
+			address {
+				display: inline;
+				font-style: normal;
+			}
+
+			body {
+				text-align: left;
+				font-family: 'Times New Roman', Times, serif;
+				font-size: 11pt;
+				color: black;
+			}
+
+			h1 {
+				font-size: 14pt;
+				text-decoration: underline;
+                font-style: italic;
+
+			}
+			h2, .topic {
+				text-decoration: underline;
+			}
+
+            h3, .topic2{
+                font-style: italic;
+            }
+
+            h4, .topic3{
+                font-weight: bold;
+            }
+
+            #topic4{
+                font-style: italic;
+                float: right;
+            }
+
+            /*  Underline the name */
+			.top_of_page_name {
+				text-decoration: underline;
+			}
+
+            /*  Italicize the address */
+			.top_of_page_address {
+				font-style: italic;
+			}
+
+            /* center personal info on top */
+			#personal_information {
+				text-align: center;
+			}
+
+            /* undordered list */
+			article > ul {
+				list-style-type: none;
+			}
+
+		</style>
+    </head>
+	<body>
+        <header>
+            <title>Resume</title>
+			<section id="personal_information">
+
+				<div class= "top_of_page">
+					<span id="name" class= "top_of_page_name">Saif Ullah</span> 
+				</div>
+
+				<address id="home_address">
+					<span class="street">
+						<span class = "top_of_page_address">89 Ryckman Street</span>
+                        <br>
+					</span>
+
+					<span class = "top_of_page_address" >Troy, New Mexico, 12345</span>
+
+				</address>
+
+				<nav id="contact">
+					<a id="email_address">
+                        <span class="email_address">saifu6035@gmail.com</span>
+					</a>
+                    <br>
+					<a id="phone_number">
+                        <span id="number">(518)-530-0790</span>
+                    </a>
+					<br>
+				</nav>
+
+			</section>
+		</header>
+        <main>
+            <article id="education">
+				<h1>Education</h1>
+				<ul id="college">
+						<div class="college">
+							<span class="name">Siena College</span>,
+
+							<address>
+								<span class = "topic2" class="city_state">Loudonville, NY</span>
+							</address>
+
+						</div>
+						<div class="degree">
+
+							<span class="degree_type">Bachelor in Computer Science</span> 
+                            <span id = "topic4" class="graduation_year">May 2023</span>	
+                            <br>
+
+                            <span class="degree_type">Minor in Marketing </span> 
+							<span id = "topic4" class="graduation_year" >May 2023</span>
+                            <br>
+
+                            <span class="deans_list">Extras: Dean's List </span>
+                            <span id = "topic4">Fall 2021</span> 
+							<br>
+
+						</div>
+				</ul>
+			</article>
+
+			<article id="extracurricular_activities">
+				<h1>Extracurricular Activities</h1>
+				<ul id="extracurricular_activities">
+
+					<li id="first">
+						<span class="topic">Albany Academy Basketball</span>
+						<ul class="skills">
+                            <li>Starting Power Forward</li>
+                            <li>Captain my senior year</li>
+                        </ul>
+
+					<li id="second">
+						<span class="topic">Hifz Club</span>
+						<ul class="skills">
+                            <li>Student at As-Salam Quran Academy</li>
+                            <li>Memorized a third of the Qur’an</li>
+                        </ul>
+
+					</li>
+
+				</ul>
+			</article>
+
+			<article id="community_service">
+				<h1>Community Service</h1>
+				<ul id="community_service">
+
+						<div class="information">
+
+							<span class="topic" class="clinic" >Free Basketball Clinics</span>
+							<ul class="skills">
+								<li>Coached at clinics in the local area. Wanted kids to learn the game of basketball and improve their skillset</li>
+								<li>Set up an educational and professional while putting the players through a variety of advanced drills</li>
+							</ul>
+
+                            <span class="topic" class="service" >Group Leader at Local Masjid</span>
+							<ul class="skills">
+								<li>Organized discussions and events for young children to learn and have fun</li>
+								<li>Led religious activities and festivals throughout the community</li>
+							</ul>
+						</div>
+				</ul>
+			</article>
+
+			<article id="work_experience">
+				<h1>Work Experience</h1>
+				<ul id="work_experience">
+						<div class="information">
+							<span class = "topic3" class="position">Cashier</span>,
+							<span class="organization name">Wal-Mart</span>,
+
+							<address>
+								<span class = "topic2" class="city">(East Greenbush, NY)</span>
+							</address>
+
+							<span class="date">
+                                <span id = "topic4" class="start_date">February 2020</span>
+								<span id = "topic4" class="end_date">May 2019 -</span>
+								
+							</span>
+
+							<ul class="skills">
+								<li>Kept a friendly attitude while communicating with them for a great service</li>
+								<li>Helped customers with their products and handled their transactions</li>
+							</ul>
+
+                            <span class = "topic3" class="position">Basketball Trainer</span>,
+							<span class="organization name">GrindTime</span>,
+
+							<address>
+								<span class = "topic2" class="city">(Guilderland, NY)</span>
+							</address>
+
+							<span class="date">
+								<span id = "topic4" class="start_date">September 2021</span>
+								<span id = "topic4" class="end_date">August 2020 -</span>
+							</span>
+
+							<ul class="skills">
+								<li>Privately training players to develop their skills and teach them the game on and off the court </li>
+								<li>Working with different age groups spanning from second grade up until twelfth grade</li>
+							</ul>
+
+                            <span class = "topic3" class="position">Waiter</span>,
+							<span class="organization name">Curry Leaf Indian Cuisine</span>,
+
+							<address>
+								<span class = "topic2" class="city">(Albany, NY)</span>
+							</address>
+
+							<span class="date">
+								<span id = "topic4" class="start_date">Present</span>
+								<span id = "topic4" class="end_date">May 2018 -</span>
+							</span>
+
+							<ul class="skills">
+								<li>Assure satisfaction and provide exceptional wait service</li>
+								<li>Answering questions and share necessary information with customers to ensure they have a delighted experience</li>
+							</ul>
+
+						</div>
+				</ul>
+			</article>
+			<article id="skills_and_interests">
+				<h1>Skills and Interests</h1>
+				<ul id="skills_and_interests">
+						<div class="skills_and_interests">
+
+							<span class = "topic3" class="position">Languages: </span>
+							<span class="organization name">Fluent in Urdu, Hindi, and Bengali</span>
+                            <br>
+
+                            <span class = "topic3" class="position">Technical Skills: </span>
+							<span class="organization name">Proficient in Java programming, Microsoft Access, Word, PowerPoint, & Excel; 
+                                                            Javascript and Assembly Language</span>
+                            <br>
+
+						</div>
+				</ul>
+			</article>
+    </main>
+</body>
+</html>

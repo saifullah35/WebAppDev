@@ -1,0 +1,17 @@
+<?
+
+$jsonString = file_get_contents('php://input');
+
+$data = json_decode($jsonString);
+
+$dataString = $data->username.",".$data->color.",".$data->size."\n";
+
+$filename = "welcomedata.txt";
+$myfile = fopen($filename, "a");
+if (!$myfile) {
+   die("Unable to open $filename.");
+}
+fwrite($myfile, $dataString);
+fclose($myfile);		
+		
+?>

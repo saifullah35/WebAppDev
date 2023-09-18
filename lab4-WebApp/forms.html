@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Forms</title>
+</head>
+
+<body>
+
+<form id = "verify">
+  <label for="username">Enter a Username:</label><br>
+  <input type="text" id="username" name="Username" maxlength = "10" minlength = "1" required><br>
+  <label for="password">Enter a Password:</label><br>
+  <input type="password" id="password" name="password"><br>
+  <label for="repassword">Re-Enter a Password:</label><br>
+  <input type="password" id="repassword" name="repassword"><br>
+  <button type = "action_button">Submit</button>
+</form>
+
+
+<script>
+    function checkForm(a){ 
+        var passwordElement = document.querySelector("#password");
+	    var submittedpassword = passwordElement.value;
+
+        var rePasswordElement = document.querySelector("#repassword");
+	    var submittedRePassword = rePasswordElement.value;
+
+        var passUpper = /[A-Z]/g;
+        var passLower = /[a-z]/g;
+        var passDigits = /[0-9]/g;
+        var minLength = 8;
+        var error = "";
+        if(submittedpassword.match(passUpper)){
+            if(submittedpassword.match(passLower)){
+                if(submittedpassword.match(passDigits)){
+                    if(submittedpassword.length >= minLength){
+                        if(submittedpassword == submittedRePassword){
+
+                        }
+                    }
+                }
+            }
+        }
+                        if(submittedpassword != submittedRePassword){
+                            event.preventDefault();
+                            error += "Passwords do not match. ";
+                        }
+                    
+                        if(submittedpassword.length < minLength){
+                        event.preventDefault();
+                        error += "Password is too short. ";
+                    }
+                
+                    if(!submittedpassword.match(passDigits)){
+                    event.preventDefault();
+                    error += "Password does not contain a digit. ";
+                }
+            
+                if(!submittedpassword.match(passLower)){
+                event.preventDefault();
+                error += "Password does not contain an lowercase letter. ";
+            }
+        
+        if(!submittedpassword.match(passUpper)){
+            event.preventDefault();
+            error += "Password does not contain an uppercase letter. ";
+
+        }
+
+        alert(error);
+    }
+    
+
+    verify.addEventListener("submit", checkForm);
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+function makeTextNode(text) {
+	return document.createTextNode(text);
+}
+
+function makeInput(type, id, value, label){
+	
+	var newType = document.createElement("input");
+    newType.setAttribute("type", type);
+
+	if (id !== undefined && id != ""){
+		newType.setAttribute("id", id);
+		newType.setAttribute("name", id);
+	}                      															
+
+	if (value !== undefined && value != "") {
+		newType.setAttribute("value", value);
+	}
+
+	if (label !== undefined && label != "") {
+		var newLabel = makeLabel(label, id);
+		var newDiv =  document.createElement("div");		
+	    newDiv.appendChild(newLabel);
+		newDiv.appendChild(newType);
+	    return newDiv;
+	}
+	else{
+		return newType;
+	}
+}
+	
+	//id
+	//var newId = document.createElement(id);
+	//if (id !== undefined && id != "") {
+	//	newId.setAttribute("for", id);
+	//}
+	//newId.appendChild(makeTextNode(id));
+	//return newId;
+
+	function makeSelect(id, values, label){
+	
+		var newSelect = document.createElement("select");
+		if (id !== undefined && id != ""){
+			newSelect.setAttribute("id", id);
+			newSelect.setAttribute("name", id);
+		}                      															
+	
+		for(var i = 0; i < values.length; i++){
+            var newOption = document.createElement("option");
+			newOption.setAttribute("values" , values[i]);
+			newOption.appendChild(makeTextNode(values[i]));
+			newSelect.appendChild(newOption);
+		}
+	
+		if (label !== undefined && label != "") {
+			var newLabel = makeLabel(label, id);
+			var newDiv =  document.createElement("div");		
+			newDiv.appendChild(newLabel);
+			newDiv.appendChild(newSelect);
+			return newDiv;
+		}
+		else{
+            return newSelect;
+		}
+   }
+
+function makeArray (value1, value2){
+     var myArray = [];
+	 for(var x = value1; x <= value2; x++){
+         var myStr = x.toString();
+         myArray.push(myStr);
+	 }
+	 return myArray;
+}
+
+function checkInputs(event){
+	var input = document.querySelectorAll("input")
+	    for(var i = 0; i < input.length; i++){
+             if(input[i].value == ""){
+				 input[i].parentNode.setAttribute("class", "error");
+                 event.preventDefault();
+			 }
+			 else{
+				input[i].parentNode.setAttribute("class", "");
+			 }
+		}
+}
+
+function makeLabel(label, id) {
+	
+	var newLabel = document.createElement("label");
+	if (id !== undefined && id != "") {
+		newLabel.setAttribute("for", id);
+	}
+	newLabel.appendChild(makeTextNode(label));
+	return newLabel;
+}

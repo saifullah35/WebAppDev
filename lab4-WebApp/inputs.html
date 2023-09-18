@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<meta charset="UTF-8">
+	<title>Lab 4</title>
+	<link rel="stylesheet" href="style.css">
+	<body>
+	
+		<form id="insert_form"></form>
+		<span id="error_message"></span>
+	
+		<script src="functions.js"></script>
+		<script>
+
+			var newForm = document.querySelector("#insert_form");
+			
+			newForm.appendChild(makeInput("text","username","","User Name: "));
+			newForm.appendChild(makeInput("password", "passwd", "", "Password: "));
+			newForm.appendChild(makeInput("email", "email", "", "Email: "));
+			newForm.appendChild(makeInput("date", "birth", "", "Date of Birth: "));
+	        newForm.appendChild(makeSelect("age",makeArray(18,68),"Age: "));
+			newForm.appendChild(makeSelect("exp", makeArray(0, 50), "Years of Experience: "));
+			newForm.appendChild(makeInput("submit","insert_button","Insert"));
+			newForm.appendChild(makeInput("reset", "reset_button", "Reset"));
+			document.querySelector("#insert_form").addEventListener("submit", checkInputs);
+
+            document.querySelector("#username").addEventListener("change", function(event){
+				if(this.value == "root" || this.value == "admin"){
+                    this.parentNode.setAttribute("class", "error")
+					document.querySelector("#error_message").innerHTML = "Invalid username";
+					document.querySelector("#insert_button").disabled = true;
+					event.preventDefault();
+				} else{
+					this.parentNode.setAttribute("class", "");
+					document.querySelector("#error_message").innerHTML = "";
+					document.querySelector("#insert_button").disabled = false;
+
+				}
+			});
+
+			document.querySelector("#passwd").addEventListener("change", function(event){
+				if(this.value.length < 10){
+                    this.parentNode.setAttribute("class", "error")
+					document.querySelector("#error_message").innerHTML = "Password is too short";
+					document.querySelector("#insert_button").disabled = true;
+					event.preventDefault();
+				} else{
+					this.parentNode.setAttribute("class", "");
+					document.querySelector("#error_message").innerHTML = "";
+					document.querySelector("#insert_button").disabled = false;
+
+				}
+			});
+
+			document.querySelector("#age").addEventListener("change", function(event){
+				if(document.querySelector("#age").value - this.value < 18){
+                    this.parentNode.setAttribute("class", "error")
+					document.querySelector("#error_message").innerHTML = "You are too young. Not enough experience";
+					document.querySelector("#insert_button").disabled = true;
+					event.preventDefault();
+				} else{
+					this.parentNode.setAttribute("class", "");
+					document.querySelector("#error_message").innerHTML = "";
+					document.querySelector("#insert_button").disabled = false;
+
+				}
+			});
+
+			document.querySelector("#exp").addEventListener("change", function(event){
+				if(document.querySelector("#exp").value - this.value < 18){
+                    this.parentNode.setAttribute("class", "error")
+					
+					document.querySelector("#error_message").innerHTML = "Your experience will have to start at 18.";
+					document.querySelector("#insert_button").disabled = true;
+					event.preventDefault();
+				} else{
+					this.parentNode.setAttribute("class", "");
+					document.querySelector("#error_message").innerHTML = "";
+					document.querySelector("#insert_button").disabled = false;
+
+				}
+			});
+
+
+
+
+		</script>
+	</body>
+</html>
